@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reviews | ADVY Perfumes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="What ADVY customers say about our fragrances, remakes and samples. Read their reviews or share your own.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="canonical" href="https://advy-perfumes.com/reviews.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ADVY">
+<meta property="og:title" content="ADVY | Reviews">
+<meta property="og:description" content="What our customers say about ADVY fragrances, in their own words.">
+<meta property="og:image" content="https://advy-perfumes.com/og-image.jpg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0a09;--ink-2:#121110;--ink-3:#191715;--line:#2a2622;--line-soft:#1f1c19;
+  --paper:#efe8dc;--soft:#c9c1b4;--mut:#8f877b;--gold:#c8b08a;--gold-2:#a8916c;--star:#d9bd84;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Jost,"Helvetica Neue",Arial,sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --gut:max(16px,5vw);
+  color-scheme:dark
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--ink);scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--paper);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);
+  background:radial-gradient(70% 50% at 50% 0%,#1d1712 0%,transparent 70%),radial-gradient(50% 40% at 85% 60%,#1a0f12 0%,transparent 70%),var(--ink);background-attachment:fixed}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:.005em;text-wrap:balance}
+p{margin:0}a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+::selection{background:var(--gold);color:var(--ink)}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+em{font-style:italic;color:var(--gold)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px var(--gut);background:#0b0a09e6;border-bottom:1px solid var(--line-soft)}
+.bar img{height:38px;width:auto;display:block}
+.bar .back{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);text-decoration:none;display:flex;align-items:center;gap:10px}
+.bar .back:hover{color:var(--gold)}
+.bar .ig{font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:10px 16px;color:var(--paper);transition:border-color .2s,color .2s}
+.bar .ig:hover{border-color:var(--gold);color:var(--gold)}
+
+/* intro */
+.intro{max-width:1240px;margin:0 auto;padding:clamp(48px,9vw,110px) var(--gut) clamp(28px,5vw,48px);text-align:center}
+.intro h1{font-size:clamp(40px,7vw,80px);line-height:1.02;margin:16px 0 18px}
+.intro p{color:var(--soft);max-width:34em;margin:0 auto}
+.intro .cta{display:inline-flex;align-items:center;gap:12px;margin-top:28px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;background:var(--gold);color:#16120c;padding:15px 24px;font-weight:500;transition:background .2s}
+.intro .cta:hover{background:#e9d3a4}
+
+/* summary */
+.score{max-width:1240px;margin:0 auto clamp(28px,5vw,48px);padding:0 var(--gut)}
+.score-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(20px,4vw,56px);align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.avg{display:flex;align-items:center;gap:18px}
+.avg b{font-family:var(--serif);font-weight:500;font-size:clamp(56px,7vw,76px);line-height:.9;color:var(--paper);font-variant-numeric:tabular-nums}
+.avg small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-top:8px}
+.dist{display:grid;gap:6px;max-width:420px;width:100%;justify-self:center}
+.dist div{display:grid;grid-template-columns:34px minmax(0,1fr) 30px;gap:10px;align-items:center;font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.dist .tr{height:4px;background:var(--line-soft)}
+.dist .tr i{display:block;height:100%;background:linear-gradient(90deg,#a8916c,var(--star))}
+.sort{display:flex;flex-direction:column;gap:6px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.sort select{background:var(--ink-2);border:1px solid var(--line);padding:9px 12px;font-size:13px;letter-spacing:.04em;text-transform:none;color:var(--soft)}
+@media (max-width:760px){.score-in{grid-template-columns:1fr;justify-items:center;text-align:center}.sort{align-items:center}}
+
+/* reviews */
+.wall{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px;align-items:start}
+.empty{border:1px dashed var(--line);padding:clamp(32px,6vw,56px) 24px;text-align:center;display:grid;gap:10px;justify-items:center}
+.empty h2{font-size:clamp(28px,4vw,38px)}
+.empty p{color:var(--mut);max-width:30em}
+.more{display:block;margin:26px auto 0;background:none;border:1px solid var(--line);padding:12px 22px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft);cursor:pointer}
+.more:hover{border-color:var(--gold);color:var(--gold)}
+
+/* write a review */
+.write{max-width:760px;margin:clamp(64px,10vw,120px) auto 0;padding:0 var(--gut) clamp(80px,12vw,140px);scroll-margin-top:90px}
+.write-head{text-align:center;margin-bottom:30px}
+.write-head h2{font-size:clamp(34px,5vw,54px);line-height:1.05;margin:14px 0 12px}
+.write-head p{color:var(--soft)}
+form.rf{border:1px solid var(--line);background:linear-gradient(180deg,#15120f,#100e0c);padding:clamp(22px,4vw,40px);display:grid;gap:20px}
+.f{display:grid;gap:8px;min-width:0}
+.f > span{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+.f > span small{letter-spacing:.08em;text-transform:none;font-size:12px;color:#6f685e;margin-left:6px}
+.f input,.f select,.f textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);padding:12px 14px;font-size:15px;color:var(--paper);border-radius:0}
+.f textarea{min-height:140px;resize:vertical;line-height:1.6}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--gold)}
+.f.bad input,.f.bad select,.f.bad textarea,.f.bad .pick{border-color:#c96a6a}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.f2{grid-template-columns:1fr}}
+.pick{display:flex;align-items:center;gap:6px;border:1px solid transparent;padding:4px 0}
+.pick button{background:none;border:0;padding:4px;cursor:pointer;line-height:0}
+.pick svg{width:34px;height:34px;fill:#2a2622;stroke:#5a5046;stroke-width:.8;transition:fill .15s,transform .15s var(--ease-out)}
+.pick button.on svg{fill:var(--star);stroke:var(--star)}
+.pick button:hover svg{transform:scale(1.1)}
+.pick .lbl{margin-left:10px;font-size:13px;color:var(--soft);letter-spacing:.04em}
+.count{justify-self:end;font-size:11px;color:#6f685e;font-variant-numeric:tabular-nums}
+.send{background:var(--gold);color:#16120c;border:0;padding:16px 24px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s}
+.send:hover{background:#e9d3a4}.send:disabled{opacity:.5;cursor:default}
+.status{min-height:1.4em;font-size:13px;color:var(--gold);text-align:center}
+.fine{font-size:12px;color:#6f685e;text-align:center}
+.thanks{border:1px solid var(--line);padding:clamp(28px,5vw,48px);text-align:center;display:grid;gap:12px;justify-items:center;animation:in .5s var(--ease-out)}
+.thanks h3{font-size:clamp(32px,4vw,44px)}
+.thanks p{color:var(--soft);max-width:30em}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+
+footer{border-top:1px solid var(--line-soft);padding:28px var(--gut);text-align:center;font-size:12px;letter-spacing:.14em;color:var(--mut)}
+footer a{color:var(--soft)}
+@media (max-width:640px){.bar .back span{display:none}.bar .ig{padding:9px 12px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="back" href="./"><svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M17 5H1M5 1L1 5l4 4"/></svg><span>The collection</span></a>
+  <a href="./" aria-label="ADVY home"><img src="assets/mark.webp" alt="ADVY"></a>
+  <a class="ig" href="https://www.instagram.com/Advy_fragrances/" target="_blank" rel="noopener">Instagram</a>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="eyebrow">Reviews</p>
+    <h1>In <em>your</em> words</h1>
+    <p>Every ADVY fragrance is blended by hand by a father and son. Here is what the people wearing them have to say.</p>
+    <a class="cta" href="#write">Write a review</a>
+  </section>
+
+  <section class="score" id="score" aria-label="Rating summary" hidden>
+    <div class="score-in">
+      <div class="avg"><b id="avgN">–</b><div><span id="avgStars"></span><small id="avgC"></small></div></div>
+      <div class="dist" id="dist"></div>
+      <label class="sort">Sort<select id="sort"><option value="new">Newest first</option><option value="high">Highest rated</option><option value="low">Lowest rated</option></select></label>
+    </div>
+  </section>
+
+  <section class="wall" aria-label="Customer reviews">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden><h2>Be the first to <em>review</em></h2><p>Wearing an ADVY fragrance? Tell others what you think. Your review appears here for everyone to read.</p></div>
+    <button class="more" id="more" type="button" hidden>Show more reviews</button>
+  </section>
+
+  <section class="write" id="write" aria-labelledby="writeH">
+    <div class="write-head">
+      <p class="eyebrow">Share yours</p>
+      <h2 id="writeH">Write a <em>review</em></h2>
+      <p>Tell us which fragrance you tried and how it made you feel.</p>
+    </div>
+    <form class="rf" id="reviewForm" name="review" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="review">
+      <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+      <input type="hidden" name="rating" id="rating" value="">
+      <div class="f" id="fRating"><span>Your rating</span>
+        <div class="pick" id="pick" role="radiogroup" aria-label="Your rating"></div>
+      </div>
+      <div class="f2">
+        <label class="f" id="fName"><span>Your name</span><input id="rName" name="name" maxlength="60" autocomplete="name" required></label>
+        <label class="f" id="fCountry"><span>Where you are</span><select id="rCountry" name="country"><option>UAE</option><option>India</option></select></label>
+      </div>
+      <label class="f" id="fScent"><span>Which fragrance</span><select id="rScent" name="scent" required></select></label>
+      <label class="f" id="fText"><span>Your review</span><textarea id="rText" name="review" maxlength="800" placeholder="How does it smell on you? How long does it last? Would you recommend it?" required></textarea><em class="count" id="rCount" style="font-style:normal">0 / 800</em></label>
+      <label class="f"><span>Email <small>optional · only for us, never shown</small></span><input id="rEmail" name="email" type="email" maxlength="120" autocomplete="email"></label>
+      <button class="send" id="rSend" type="submit">Send review</button>
+      <p class="status" id="rStatus" aria-live="polite"></p>
+      <p class="fine">Only your first name, country, rating, fragrance and review are shown on the site.</p>
+    </form>
+    <div class="thanks" id="thanks" hidden>
+      <span id="thanksStars"></span>
+      <h3>Thank you, <em id="thanksName"></em></h3>
+      <p>Your review is on its way. It shows on this page now on your device, and for everyone else within a few minutes.</p>
+      <a class="cta more" href="./" style="text-decoration:none;margin-top:6px">Back to the collection</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; Advy · <a href="./">advy-perfumes.com</a> · <a href="https://www.instagram.com/Advy_fragrances/" target="_blank" rel="noopener">@Advy_fragrances</a></footer>
+
+<script src="assets/reviews.js?v=1"></script>
+<script>
+(function(){
+  const R = window.advyReviews;
+  const SCENTS = ['Souvenir','Nocturne','Bubblegum','Blue Noir','Nectar Rose','Legacy','Temptation','Signature','Dynasty','Amber','Valencia','Royal Oud','Obsession','De Marly','Desire','Cardamom Noir'];
+  const REMAKES = ['Stronger With You Intensely','Stronger With You Powerfully','Le Male','Le Beau Narcisse','Habdan','Althaïr','Layton','Imagination','Sauvage','Born in Roma Extradose','Acqua di Giò Profondo','Y','MYSLF'];
+  const $ = id => document.getElementById(id);
+  const live = /(^|\.)advy-perfumes\.com$|\.netlify\.app$/.test(location.hostname) && !window.claude;
+
+  // fragrance list, with ?scent= preselected (links from the collection)
+  const pre = new URLSearchParams(location.search).get('scent') || '';
+  $('rScent').innerHTML = '<option value="">Choose a fragrance</option><optgroup label="Signature collection">' + SCENTS.map(s => `<option${s === pre ? ' selected' : ''}>${s}</option>`).join('')
+    + '</optgroup><optgroup label="Remakes">' + REMAKES.map(s => `<option value="${s} (remake)"${s + ' (remake)' === pre ? ' selected' : ''}>${s}</option>`).join('')
+    + '</optgroup><optgroup label="Other"><option>Custom blend</option><option>Samples</option></optgroup>';
+
+  // star picker
+  const WORDS = ['', 'Not for me', 'It’s okay', 'Good', 'Very good', 'I love it'];
+  let rating = 0;
+  const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.75 5.9 6.45.75-4.8 4.4 1.3 6.4L12 17.05 6.3 20.25l1.3-6.4-4.8-4.4 6.45-.75z"/></svg>';
+  $('pick').innerHTML = [1, 2, 3, 4, 5].map(i => `<button type="button" role="radio" aria-checked="false" aria-label="${i} star${i > 1 ? 's' : ''}" data-v="${i}">${STAR}</button>`).join('') + '<span class="lbl" id="pickL">Tap a star</span>';
+  const paint = v => $('pick').querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.v <= v));
+  $('pick').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; rating = +b.dataset.v; $('rating').value = rating; paint(rating);
+    $('pick').querySelectorAll('button').forEach(x => x.setAttribute('aria-checked', String(+x.dataset.v === rating))); $('pickL').textContent = WORDS[rating]; $('fRating').classList.remove('bad'); });
+  $('pick').addEventListener('mouseover', e => { const b = e.target.closest('button'); if (b) paint(+b.dataset.v); });
+  $('pick').addEventListener('mouseleave', () => paint(rating));
+  $('pick').addEventListener('keydown', e => { if (!/Arrow(Left|Right)/.test(e.key)) return; e.preventDefault(); const v = Math.max(1, Math.min(5, (rating || 0) + (e.key === 'ArrowRight' ? 1 : -1)));
+    $('pick').querySelector(`[data-v="${v}"]`).click(); $('pick').querySelector(`[data-v="${v}"]`).focus(); });
+  $('rText').addEventListener('input', () => { $('rCount').textContent = $('rText').value.length + ' / 800'; });
+
+  // the wall
+  let all = [], shown = 12;
+  function draw(){
+    const sort = $('sort').value;
+    const list = all.slice().sort((a, b) => sort === 'high' ? (b.rating - a.rating) || (new Date(b.at) - new Date(a.at)) : sort === 'low' ? (a.rating - b.rating) || (new Date(b.at) - new Date(a.at)) : new Date(b.at) - new Date(a.at));
+    $('grid').innerHTML = list.slice(0, shown).map(R.card).join('');
+    $('more').hidden = list.length <= shown;
+    $('empty').hidden = list.length > 0;
+    const s = R.summary(all);
+    $('score').hidden = !s.n;
+    if (s.n){
+      $('avgN').textContent = s.avg.toFixed(1); $('avgStars').innerHTML = R.stars(s.avg, 'lg'); $('avgC').textContent = s.n + (s.n === 1 ? ' review' : ' reviews');
+      const max = Math.max(1, ...s.dist.map(d => d.c));
+      $('dist').innerHTML = s.dist.map(d => `<div><span>${d.s} ★</span><span class="tr"><i style="width:${d.c / max * 100}%"></i></span><span>${d.c}</span></div>`).join('');
+    }
+  }
+  $('sort').addEventListener('change', draw);
+  $('more').addEventListener('click', () => { shown += 12; draw(); });
+  R.load().then(r => { all = r.reviews; draw(); });
+
+  // send
+  const form = $('reviewForm');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = $('rName').value.trim(), text = $('rText').value.trim(), scent = $('rScent').value, email = $('rEmail').value.trim();
+    const bad = []; if (!rating) bad.push('fRating'); if (!name) bad.push('fName'); if (!scent) bad.push('fScent'); if (text.length < 10) bad.push('fText');
+    ['fRating', 'fName', 'fScent', 'fText'].forEach(id => $(id).classList.toggle('bad', bad.includes(id)));
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ $('rStatus').textContent = 'Please check your email address, or leave it empty.'; $('rEmail').focus(); return; }
+    if (bad.length){ $('rStatus').textContent = !rating ? 'Please choose a star rating.' : text.length < 10 && bad.includes('fText') ? 'Please write a few words about the fragrance.' : 'Please fill in the highlighted details.'; return; }
+    $('rSend').disabled = true; $('rStatus').textContent = 'Sending your review…';
+    try {
+      if (live){ const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(form)).toString()}); if (!r.ok) throw new Error(r.status); }
+      else await new Promise(r => setTimeout(r, 600));
+      const first = name.split(/\s+/)[0], last = name.split(/\s+/).slice(1).join(' ');
+      const mine = {id:'local-' + Date.now(), name:first + (last ? ' ' + last[0].toUpperCase() + '.' : ''), country:$('rCountry').value, rating, scent:scent.replace(' (remake)', ''), text, at:new Date().toISOString()};
+      R.remember(mine); all = [{...mine, pending:true}, ...all.filter(x => !x.example)]; $('sort').value = 'new'; draw();
+      $('thanksName').textContent = first; $('thanksStars').innerHTML = R.stars(rating, 'lg');
+      form.hidden = true; $('thanks').hidden = false; $('rStatus').textContent = '';
+      document.querySelector('.wall').scrollIntoView({behavior:'smooth', block:'start'});
+    } catch (err) { $('rStatus').textContent = "Your review didn't send. Please try again in a moment."; }
+    finally { $('rSend').disabled = false; }
+  });
+  form.addEventListener('input', e => { const f = e.target.closest('.f'); if (f) f.classList.remove('bad'); });
+})();
+</script>
+<script src="assets/chat.js?v=6" defer></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Custom Order | ADVY Perfumes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Compose your own ADVY fragrance: choose your top, heart and base notes and how strong each one should be, then order it on Instagram.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="canonical" href="https://advy-perfumes.com/custom-order.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ADVY">
+<meta property="og:title" content="ADVY | Custom Order">
+<meta property="og:description" content="Choose your notes and how strong each one should be. A fragrance composed by you, made by ADVY.">
+<meta property="og:image" content="https://advy-perfumes.com/og-image.jpg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0a09;--ink-2:#121110;--ink-3:#191715;--line:#2a2622;--line-soft:#1f1c19;
+  --paper:#efe8dc;--soft:#c9c1b4;--mut:#8f877b;--gold:#c8b08a;--gold-2:#a8916c;
+  --top:#e3cf8f;--heart:#d48a96;--base:#b8743a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Jost,"Helvetica Neue",Arial,sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --gut:max(16px,5vw);
+  color-scheme:dark
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--ink);scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--paper);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(70% 50% at 50% 0%,#1d1712 0%,transparent 70%),radial-gradient(50% 40% at 85% 60%,#1a0f12 0%,transparent 70%),var(--ink);background-attachment:fixed}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:.005em;text-wrap:balance}
+p{margin:0}a{color:inherit}button{font:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+::selection{background:var(--gold);color:var(--ink)}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+em{font-style:italic;color:var(--gold)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px var(--gut);background:#0b0a09e6;border-bottom:1px solid var(--line-soft)}
+.bar img{height:38px;width:auto;display:block}
+.bar .back{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);text-decoration:none;display:flex;align-items:center;gap:10px}
+.bar .back:hover{color:var(--gold)}
+.bar .ig{font-size:11px;letter-spacing:.28em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:10px 16px;color:var(--paper);transition:border-color .2s,color .2s}
+.bar .ig:hover{border-color:var(--gold);color:var(--gold)}
+
+/* intro */
+.intro{max-width:1240px;margin:0 auto;padding:clamp(48px,9vw,110px) var(--gut) clamp(28px,5vw,56px);text-align:center}
+.intro h1{font-size:clamp(40px,7vw,80px);line-height:1.02;margin:16px 0 18px}
+.intro p{color:var(--soft);max-width:36em;margin:0 auto}
+.steps{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 28px;margin-top:28px;padding:0;list-style:none;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.steps b{font-family:var(--serif);font-weight:500;font-size:16px;color:var(--gold);letter-spacing:0;margin-right:8px}
+
+/* layout */
+.studio{max-width:1240px;margin:0 auto;padding:0 var(--gut) 120px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+
+/* note library */
+.lib-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.search{flex:1;min-width:200px;max-width:320px;position:relative}
+.search input{width:100%;background:var(--ink-2);border:1px solid var(--line);color:var(--paper);font:inherit;font-size:14px;padding:11px 14px 11px 38px;border-radius:0}
+.search input::placeholder{color:var(--mut)}
+.search input:focus{outline:none;border-color:var(--gold)}
+.search svg{position:absolute;left:13px;top:50%;translate:0 -50%;width:15px;height:15px;stroke:var(--mut);fill:none;stroke-width:1.5}
+.count{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.count b{color:var(--paper);font-weight:400}
+.tier{border-top:1px solid var(--line);padding:26px 0 30px}
+.tier-h{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.tier-h h2{font-size:clamp(26px,3vw,34px)}
+.tier-h .dot{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);flex:none;align-self:center}
+.tier-h span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-left:auto}
+.tier>p{color:var(--mut);font-size:14px;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative;border:1px solid var(--line);background:var(--ink-2);padding:10px 16px 10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:14px;letter-spacing:.02em;color:var(--soft);
+  transition:border-color .2s,color .2s,background-color .2s,transform .16s var(--ease-out)}
+.chip:active{transform:scale(.97)}
+.chip i{width:14px;height:14px;border:1px solid var(--mut);border-radius:50%;flex:none;display:grid;place-items:center;transition:background-color .2s,border-color .2s}
+.chip i::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink);opacity:0;transition:opacity .2s}
+.chip small{font-size:11px;color:var(--mut);letter-spacing:.06em}
+.chip[aria-pressed="true"]{border-color:var(--c);color:var(--paper);background:color-mix(in srgb,var(--c) 10%,var(--ink-2))}
+.chip[aria-pressed="true"] i{background:var(--c);border-color:var(--c)}
+.chip[aria-pressed="true"] i::after{opacity:1}
+.chip:disabled{opacity:.35;cursor:not-allowed}
+@media (hover:hover) and (pointer:fine){.chip:not(:disabled):hover{border-color:var(--c);color:var(--paper)}}
+.chip[hidden]{display:none}
+.none{color:var(--mut);font-size:14px;padding:6px 0}
+
+/* blend panel */
+.blend{position:sticky;top:92px;scroll-margin-top:84px;border:1px solid var(--line);background:linear-gradient(180deg,#14110f,#0e0c0b);padding:clamp(20px,3vw,32px)}
+.blend h2{font-size:clamp(28px,3vw,38px);margin:8px 0 4px}
+.blend .sub{color:var(--mut);font-size:14px}
+.comp{display:flex;height:10px;margin:22px 0 8px;background:var(--ink-3);overflow:hidden}
+.comp span{height:100%;background:var(--c);transition:flex-grow .35s var(--ease-out);min-width:0}
+.comp span+span{border-left:1px solid var(--ink)}
+.legend{display:flex;gap:18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.legend span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:1px}
+.legend b{color:var(--soft);font-weight:400}
+.picked{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:4px}
+.empty{border:1px dashed var(--line);padding:28px 18px;text-align:center;color:var(--mut);font-size:14px;margin-top:22px}
+.empty strong{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:var(--soft);margin-bottom:4px}
+.note{padding:14px 0;border-bottom:1px solid var(--line-soft);animation:in .4s var(--ease-out)}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.note-top{display:flex;align-items:center;gap:10px}
+.note-top .dot{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.note-top .nm{font-family:var(--serif);font-size:21px;line-height:1.2}
+.note-top .tr{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.note-top .pct{margin-left:auto;font-variant-numeric:tabular-nums;font-size:15px;color:var(--paper);min-width:44px;text-align:right}
+.note-top .rm{border:0;background:none;color:var(--mut);cursor:pointer;width:32px;height:32px;display:grid;place-items:center;margin-right:-8px}
+.note-top .rm:hover{color:var(--paper)}
+.note-top .rm svg{width:12px;height:12px;stroke:currentColor;stroke-width:1.6}
+.ctl{display:flex;align-items:center;gap:14px;margin-top:8px}
+.ctl .lvl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);width:72px;flex:none}
+input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:28px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:linear-gradient(90deg,var(--c) calc(var(--v)*1%),var(--line) 0)}
+input[type=range]::-moz-range-track{height:3px;background:linear-gradient(90deg,var(--c) calc(var(--v)*1%),var(--line) 0)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--c);margin-top:-7.5px;box-shadow:0 0 0 4px #0b0a0999}
+input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--c)}
+.opts{margin-top:26px;display:grid;gap:18px}
+.opt h3{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.seg{display:flex;border:1px solid var(--line)}
+.seg button{flex:1;background:none;border:0;padding:12px 10px;cursor:pointer;font-size:13px;letter-spacing:.08em;color:var(--soft);transition:background-color .2s,color .2s}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button small{display:block;font-size:11px;color:var(--mut);letter-spacing:.04em}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#16120c}
+.seg button[aria-pressed="true"] small{color:#3a3020}
+.namefield input{width:100%;background:var(--ink-2);border:1px solid var(--line);color:var(--paper);font-family:var(--serif);font-size:20px;padding:10px 14px;border-radius:0}
+.namefield input:focus{outline:none;border-color:var(--gold)}
+.tip{margin-top:18px;font-size:13px;color:var(--mut);display:flex;gap:10px}
+.tip svg{flex:none;width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.4;margin-top:3px}
+.actions{display:grid;gap:10px;margin-top:24px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:1px solid var(--gold);background:linear-gradient(100deg,#b8995f,#e9d3a4 50%,#b8995f);background-size:200% 100%;color:#16120c;
+  padding:16px 20px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background-position .6s ease,transform .16s var(--ease-out)}
+.btn:hover{background-position:100% 0}.btn:active{transform:scale(.98)}
+.btn.ghost{background:none;color:var(--paper);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.details{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;display:grid;gap:14px}
+.details h3{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+.f2{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.fld{display:grid;gap:6px}
+.fld>span{font-size:12px;letter-spacing:.06em;color:var(--soft)}.fld i{color:var(--mut);font-style:normal}
+.fld input,.fld select,.fld textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);color:var(--paper);font:inherit;font-size:15px;padding:11px 12px;border-radius:0;resize:vertical}
+.fld select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),linear-gradient(-45deg,transparent 50%,var(--mut) 50%);background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold)}
+.fld.bad input,.fld.bad select{border-color:#c96a6a}
+.alt{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lnk{background:none;border:0;padding:4px 0;cursor:pointer;font-size:13px;color:var(--soft);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.lnk:hover{color:var(--gold)}
+.done{margin-top:26px;border-top:1px solid var(--line);padding-top:24px;display:grid;gap:12px;animation:in .5s var(--ease-out)}
+.done h3{font-size:32px;line-height:1.1}.done p{color:var(--soft);font-size:15px}.done b{color:var(--paper);font-weight:400}
+.done pre{white-space:pre-wrap;font:inherit;font-size:13px;color:var(--mut);background:var(--ink-2);border:1px solid var(--line-soft);padding:12px 14px;margin:0}
+.status{min-height:1.4em;font-size:13px;color:var(--gold);text-align:center}
+.how{margin-top:6px;font-size:13px;color:var(--mut);text-align:center}
+
+/* phone: the blend follows the library, with a summary bar to jump to it */
+.peek{display:none}
+@media (max-width:900px){
+  .studio{grid-template-columns:1fr}
+  .blend{position:static}
+  .peek{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:#16120fef;border:1px solid var(--line);padding:12px 14px 12px 18px;text-decoration:none;transition:transform .35s var(--ease-out),opacity .35s}
+  .peek.none{display:none}
+  .peek.hide{transform:translateY(140%);opacity:0;pointer-events:none}
+  .peek .t{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+  .peek .t b{color:var(--gold);font-weight:400}
+  .peek .go{font-size:11px;letter-spacing:.24em;text-transform:uppercase;background:var(--gold);color:#16120c;padding:10px 14px}
+  .bar .back span{display:none}
+}
+@media (max-width:520px){.f2{grid-template-columns:1fr}.chip{padding:9px 13px 9px 11px;font-size:13px}.bar .ig{padding:9px 12px}.ctl .lvl{width:64px}}
+footer{border-top:1px solid var(--line-soft);padding:28px var(--gut);text-align:center;font-size:12px;letter-spacing:.14em;color:var(--mut)}
+footer a{color:var(--soft)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="back" href="./"><svg width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M17 5H1M5 1L1 5l4 4"/></svg><span>The collection</span></a>
+  <a href="./" aria-label="ADVY home"><img src="assets/mark.webp" alt="ADVY"></a>
+  <a class="ig" href="https://www.instagram.com/Advy_fragrances/" target="_blank" rel="noopener">Instagram</a>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="eyebrow">Custom order</p>
+    <h1>Compose <em>your own</em> scent</h1>
+    <p>Choose the notes you love and decide how strongly each one should come through. We'll blend it for you by hand and confirm every detail with you before we make it.</p>
+    <ol class="steps"><li><b>1</b>Choose your notes</li><li><b>2</b>Set each one's strength</li><li><b>3</b>Send it to us</li></ol>
+  </section>
+
+  <div class="studio">
+    <section class="lib" aria-labelledby="libTitle">
+      <div class="lib-head">
+        <h2 id="libTitle" class="eyebrow" style="font-family:var(--sans);font-weight:400">The notes</h2>
+        <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Search notes" aria-label="Search notes"></label>
+      </div>
+      <div id="tiers"></div>
+    </section>
+
+    <aside class="blend" id="blend" aria-labelledby="blendTitle">
+      <p class="eyebrow">Your blend</p>
+      <h2 id="blendTitle"><span id="bname">Untitled</span></h2>
+      <p class="sub" id="bsub">Up to 8 notes.</p>
+      <div class="comp" id="comp" aria-hidden="true"></div>
+      <div class="legend" id="legend"></div>
+      <div class="empty" id="empty"><strong>Start with a note you love</strong>Pick notes from the list and they'll appear here, ready for you to set their strength.</div>
+      <ul class="picked" id="picked"></ul>
+
+      <div class="opts">
+        <div class="opt"><h3>Size</h3>
+          <div class="seg" id="size" role="group" aria-label="Size">
+            <button type="button" data-v="50 ml bottle" aria-pressed="true">50 ml bottle<small>AED 75</small></button>
+            <button type="button" data-v="20 ml sample" aria-pressed="false">20 ml sample<small>AED 12 · try it first</small></button>
+          </div>
+        </div>
+        <div class="opt namefield"><h3>Name your blend <span style="text-transform:none;letter-spacing:0">(optional)</span></h3>
+          <input id="nm" maxlength="32" placeholder="e.g. Desert Rain" autocomplete="off">
+        </div>
+      </div>
+      <p class="tip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/></svg><span>A balanced perfume usually has one to three notes from each level: top notes greet you, heart notes stay for hours, base notes last into the night.</span></p>
+      <form class="details" id="orderForm" name="custom-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="custom-order">
+        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+        <input type="hidden" name="reference"><input type="hidden" name="blend-name"><input type="hidden" name="size"><input type="hidden" name="blend">
+        <h3>Your details</h3>
+        <div class="f2">
+          <label class="fld"><span>Your name</span><input name="name" autocomplete="name" required maxlength="80"></label>
+          <label class="fld"><span>Country</span><select name="country" required><option value="">Choose</option><option>India</option><option>UAE</option></select></label>
+        </div>
+        <div class="f2">
+          <label class="fld"><span>Email</span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
+          <label class="fld"><span>Instagram handle</span><input name="instagram" maxlength="60" placeholder="@yourname" autocapitalize="off"></label>
+        </div>
+        <p class="how" style="text-align:left;margin-top:-4px">Leave your email, your Instagram, or both, so we can reach you.</p>
+        <label class="fld"><span>Anything else we should know <i>(optional)</i></span><textarea name="message" rows="2" maxlength="600" placeholder="An occasion, a scent you love, a gift…"></textarea></label>
+        <div class="actions">
+          <button class="btn" id="order" type="submit" aria-disabled="true">Send my custom order</button>
+          <p class="status" id="status" role="status"></p>
+          <p class="how">We'll confirm your blend, the price and delivery with you before we make it. Nothing is charged here.</p>
+          <div class="alt"><button class="lnk" id="copyIg" type="button">Or copy my blend and message us on Instagram</button><button class="lnk" id="reset" type="button">Start again</button></div>
+        </div>
+      </form>
+      <div class="done" id="done" hidden>
+        <p class="eyebrow">Order received<span id="dname" hidden></span></p>
+        <h3>Thank you for ordering at <em>ADVY Perfumes</em>.</h3>
+        <p>Once your perfume is ready, we will email you or message you on Instagram.</p>
+        <p>Your reference: <b id="dref"></b><span id="dcontact" hidden></span></p>
+        <pre id="dsum"></pre>
+        <button class="btn ghost" id="again" type="button">Compose another blend</button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<a class="peek hide" id="peek" href="#blend"><span class="t">Your blend · <b id="pk">0 notes</b></span><span class="go">Review</span></a>
+
+<footer>© ADVY · <a href="./">advy-perfumes.com</a> · Delivering in India and the UAE</footer>
+
+<script>
+/* ================= NOTES (edit here) =================
+   Placeholder list. Replace with ADVY's real notes: each note has a name and, optionally, a short description (d). */
+const NOTES = {
+  top:   {label:'Top notes',   when:'First 15 minutes', blurb:'The opening. Bright and fleeting, they are the first thing you notice.', color:'var(--top)',
+          notes:[{n:'Bergamot',d:'citrus'},{n:'Lemon',d:'citrus'},{n:'Grapefruit',d:'citrus'},{n:'Mandarin',d:'citrus'},{n:'Pink pepper',d:'spice'},{n:'Cardamom',d:'spice'},{n:'Mint',d:'fresh'},{n:'Apple',d:'fruit'},{n:'Blackcurrant',d:'fruit'},{n:'Lychee',d:'fruit'}]},
+  heart: {label:'Heart notes', when:'2 to 4 hours',     blurb:'The character. They appear as the top fades and carry the scent through the day.', color:'var(--heart)',
+          notes:[{n:'Rose',d:'floral'},{n:'Jasmine',d:'floral'},{n:'Iris',d:'powdery'},{n:'Lavender',d:'aromatic'},{n:'Orange blossom',d:'floral'},{n:'Saffron',d:'spice'},{n:'Cinnamon',d:'spice'},{n:'Geranium',d:'floral'},{n:'Coffee',d:'gourmand'},{n:'Praline',d:'gourmand'}]},
+  base:  {label:'Base notes',  when:'6 hours and more', blurb:'The memory. Deep and warm, they linger on skin and clothes long after.', color:'var(--base)',
+          notes:[{n:'Vanilla',d:'sweet'},{n:'Amber',d:'warm'},{n:'Oud',d:'woody'},{n:'Sandalwood',d:'woody'},{n:'Musk',d:'soft'},{n:'Tonka bean',d:'sweet'},{n:'Patchouli',d:'earthy'},{n:'Vetiver',d:'earthy'},{n:'Cedarwood',d:'woody'},{n:'Leather',d:'smoky'}]}
+};
+const MAX = 8;                                  // most notes in one blend
+const LEVELS = ['Whisper','Soft','Light','Gentle','Balanced','Present','Rich','Strong','Bold','Intense'];   // slider 1..10
+
+/* ================= builder ================= */
+const $ = id => document.getElementById(id);
+const tiersEl = $('tiers'), picked = $('picked'), comp = $('comp'), legend = $('legend');
+let blend = [];                                 // [{t:'top', n:'Bergamot', v:5}]
+let size = '50 ml bottle';
+const key = (t, n) => t + ':' + n;
+const has = (t, n) => blend.some(b => b.t === t && b.n === n);
+
+// library
+for (const t in NOTES){
+  const T = NOTES[t], sec = document.createElement('div'); sec.className = 'tier'; sec.style.setProperty('--c', T.color); sec.dataset.t = t;
+  sec.innerHTML = `<div class="tier-h"><i class="dot"></i><h2>${T.label}</h2><span>${T.when}</span></div><p>${T.blurb}</p><div class="chips"></div><p class="none" hidden>No ${T.label.toLowerCase()} match your search.</p>`;
+  const chips = sec.querySelector('.chips');
+  T.notes.forEach(o => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.k = key(t, o.n); b.dataset.s = (o.n + ' ' + (o.d || '')).toLowerCase();
+    b.setAttribute('aria-pressed', 'false'); b.innerHTML = `<i></i>${o.n}${o.d ? ` <small>${o.d}</small>` : ''}`;
+    b.addEventListener('click', () => toggle(t, o.n)); chips.appendChild(b); });
+  tiersEl.appendChild(sec);
+}
+$('q').addEventListener('input', e => { const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.tier').forEach(sec => { let any = false;
+    sec.querySelectorAll('.chip').forEach(c => { const m = !q || c.dataset.s.includes(q); c.hidden = !m; any = any || m; });
+    sec.querySelector('.none').hidden = any; }); });
+
+function toggle(t, n){
+  if (has(t, n)) blend = blend.filter(b => !(b.t === t && b.n === n));
+  else { if (blend.length >= MAX) return; blend.push({t, n, v:5}); }
+  render(); save();
+}
+
+// each note's share of the blend, in whole percentages that always add up to 100
+function shares(){
+  const total = blend.reduce((a, b) => a + b.v, 0) || 1;
+  const raw = blend.map(b => b.v/total*100), fl = raw.map(Math.floor); let rest = 100 - fl.reduce((a, b) => a + b, 0);
+  raw.map((r, i) => [r - fl[i], i]).sort((a, b) => b[0] - a[0]).forEach(([, i]) => { if (rest > 0 && blend.length){ fl[i]++; rest--; } });
+  return fl;
+}
+// blend panel
+function render(){
+  const fl = shares();
+
+  document.querySelectorAll('.chip').forEach(c => { const [t, n] = c.dataset.k.split(':'); const on = has(t, n);
+    c.setAttribute('aria-pressed', on); c.disabled = !on && blend.length >= MAX; });
+
+  $('empty').hidden = blend.length > 0;
+  $('bsub').textContent = blend.length ? `${blend.length} of ${MAX} notes${blend.length >= MAX ? ' · remove one to add another' : ''}` : `Up to ${MAX} notes.`;
+  $('pk').textContent = blend.length + (blend.length === 1 ? ' note' : ' notes');
+
+  // keep existing rows so sliders aren't interrupted while dragging
+  const want = new Set(blend.map(b => key(b.t, b.n)));
+  [...picked.children].forEach(li => { if (!want.has(li.dataset.k)) li.remove(); });
+  const order = ['top', 'heart', 'base'];
+  [...blend].sort((a, b) => order.indexOf(a.t) - order.indexOf(b.t)).forEach(b => {
+    const k = key(b.t, b.n); let li = picked.querySelector(`[data-k="${CSS.escape(k)}"]`);
+    if (!li){
+      li = document.createElement('li'); li.className = 'note'; li.dataset.k = k; li.style.setProperty('--c', NOTES[b.t].color);
+      li.innerHTML = `<div class="note-top"><i class="dot"></i><span class="nm"></span><span class="tr">${b.t}</span><span class="pct"></span>
+        <button class="rm" type="button" aria-label="Remove ${b.n}"><svg viewBox="0 0 12 12"><path d="M1 1l10 10M11 1L1 11"/></svg></button></div>
+        <div class="ctl"><span class="lvl"></span><input type="range" min="1" max="10" step="1" aria-label="Strength of ${b.n}"></div>`;
+      li.querySelector('.nm').textContent = b.n;
+      li.querySelector('.rm').addEventListener('click', () => toggle(b.t, b.n));
+      const r = li.querySelector('input'); r.value = b.v;
+      r.addEventListener('input', () => { const it = blend.find(x => key(x.t, x.n) === k); if (it){ it.v = +r.value; render(); save(); } });
+    }
+    picked.appendChild(li);   // re-append keeps top → heart → base order
+    const i = blend.indexOf(b), r = li.querySelector('input');
+    li.querySelector('.pct').textContent = fl[i] + '%';
+    li.querySelector('.lvl').textContent = LEVELS[b.v - 1];
+    r.style.setProperty('--v', (b.v - 1)/9*100); r.setAttribute('aria-valuetext', `${LEVELS[b.v - 1]}, ${fl[i]}% of the blend`);
+    if (document.activeElement !== r) r.value = b.v;
+  });
+
+  // composition bar + share per level
+  comp.innerHTML = ''; const share = {top:0, heart:0, base:0};
+  [...blend].sort((a, b) => order.indexOf(a.t) - order.indexOf(b.t)).forEach(b => { const s = document.createElement('span'); s.style.setProperty('--c', NOTES[b.t].color); s.style.flexGrow = b.v; comp.appendChild(s); share[b.t] += fl[blend.indexOf(b)]; });
+  legend.innerHTML = order.map(t => `<span style="--c:${NOTES[t].color}">${t} <b>${blend.length ? share[t] + '%' : '–'}</b></span>`).join('');
+
+  $('order').setAttribute('aria-disabled', blend.length ? 'false' : 'true'); $('peek').classList.toggle('none', !blend.length);
+  $('bname').textContent = $('nm').value.trim() || 'Untitled';
+}
+
+$('size').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; size = b.dataset.v;
+  $('size').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); save(); });
+$('nm').addEventListener('input', () => { render(); save(); });
+$('reset').addEventListener('click', () => { blend = []; $('nm').value = ''; $('status').textContent = ''; render(); save(); });
+
+function summary(){
+  const fl = shares(), order = ['top', 'heart', 'base'];
+  const lines = order.map(t => { const xs = blend.filter(b => b.t === t); if (!xs.length) return null;
+    return NOTES[t].label + ': ' + xs.map(b => `${b.n} (${LEVELS[b.v - 1].toLowerCase()}, ${fl[blend.indexOf(b)]}%)`).join(', '); }).filter(Boolean);
+  const nm = $('nm').value.trim();
+  return ['ADVY custom order' + (nm ? ' · "' + nm + '"' : ''), 'Size: ' + size + ' · AED ' + (/sample/i.test(size) ? 12 : 75) + ' (plus delivery)', ...lines].join('\n');
+}
+const form = $('orderForm'), live = /(^|\.)advy-perfumes\.com$|\.netlify\.app$/.test(location.hostname);
+form.addEventListener('submit', async e => {
+  e.preventDefault(); const st = $('status');
+  if (!blend.length){ st.textContent = 'Choose at least one note first.'; return; }
+  let bad = null;
+  form.querySelectorAll('[required]').forEach(f => { const ok = f.value.trim() !== ''; f.closest('.fld').classList.toggle('bad', !ok); if (!ok && !bad) bad = f; });
+  const em = form.elements.email, ig = form.elements.instagram, any = em.value.trim() || ig.value.trim(), emOk = !em.value.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim());
+  em.closest('.fld').classList.toggle('bad', !emOk || !any); ig.closest('.fld').classList.toggle('bad', !any); if ((!emOk || !any) && !bad) bad = em;
+  if (bad){ st.textContent = !any ? 'Please leave your email or Instagram so we can reach you.' : !emOk ? 'Please check your email address.' : 'Please fill in the highlighted details.'; bad.focus(); return; }
+  const ref = 'ADVY-' + Date.now().toString(36).slice(-4).toUpperCase() + Math.random().toString(36).slice(2, 4).toUpperCase();
+  form.elements.reference.value = ref; form.elements['blend-name'].value = $('nm').value.trim(); form.elements.size.value = size; form.elements.blend.value = summary();
+  const btn = $('order'); btn.setAttribute('aria-disabled', 'true'); st.textContent = 'Sending…';
+  try {
+    if (live){
+      const res = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(form)).toString()});
+      if (!res.ok) throw new Error(res.status);
+    } else await new Promise(r => setTimeout(r, 600));   // preview: nothing is sent
+    $('dname').textContent = ', ' + form.elements.name.value.trim().split(/\s+/)[0];
+    $('dref').textContent = ref;
+    $('dsum').textContent = summary() + (live ? '' : '\n\n(Preview only: on advy-perfumes.com this order goes to your Netlify Forms.)');
+    form.hidden = true; $('done').hidden = false; st.textContent = '';
+    $('done').scrollIntoView({behavior:'smooth', block:'nearest'});
+  } catch (err) {
+    st.textContent = "Sorry, your order didn't send. Please try again, or message us on Instagram.";
+  } finally { btn.setAttribute('aria-disabled', blend.length ? 'false' : 'true'); }
+});
+form.addEventListener('input', e => { const f = e.target.closest('.fld'); if (f) f.classList.remove('bad');
+  if (e.target.name === 'email' || e.target.name === 'instagram') ['email', 'instagram'].forEach(n => form.elements[n].closest('.fld').classList.remove('bad')); });
+$('again').addEventListener('click', () => { blend = []; $('nm').value = ''; form.reset(); form.hidden = false; $('done').hidden = true; render(); save(); });
+$('copyIg').addEventListener('click', async () => {
+  if (!blend.length){ $('status').textContent = 'Choose at least one note first.'; return; }
+  const text = summary(); let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch (e) {
+    try { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); ta.remove(); } catch (e2) {}
+  }
+  $('status').textContent = ok ? 'Blend copied. Paste it into your message to us on Instagram.' : 'Opening Instagram. Tell us the notes you chose.';
+  window.open('https://www.instagram.com/Advy_fragrances/', '_blank', 'noopener');
+});
+
+// remember the blend on this device
+function save(){ try { localStorage.setItem('advyBlend', JSON.stringify({blend, size, name:$('nm').value})); } catch (e) {} }
+try { const s = JSON.parse(localStorage.getItem('advyBlend') || 'null');
+  if (s){ blend = (s.blend || []).filter(b => NOTES[b.t] && NOTES[b.t].notes.some(o => o.n === b.n)).slice(0, MAX); if (s.size) size = /sample/i.test(s.size) ? '20 ml sample' : '50 ml bottle'; $('nm').value = s.name || '';
+    $('size').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === size)); } } catch (e) {}
+render();
+
+// phone: summary bar shows while the blend panel is off screen
+const peek = $('peek');
+if ('IntersectionObserver' in window) new IntersectionObserver(es => { peek.classList.toggle('hide', es[0].isIntersecting); }).observe($('blend'));
+</script>
+<script src="assets/chat.js?v=6" defer></script>
+</body>
+</html>
